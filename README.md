@@ -8,37 +8,7 @@ Every ad platform grades its own homework. Google Ads takes credit on a last-cli
 
 ## Architecture
 
-```mermaid
-flowchart TD
-    A[(GA4 sessions + CRM closed deals)] --> B[Build customer journey paths per converting user]
-
-    B --> C1[First touch model]
-    B --> C2[Last touch model]
-    B --> C3[Linear model]
-    B --> C4[Time decay model]
-    B --> C5[Position based model]
-    B --> C6[Markov chain removal effect]
-
-    C1 & C2 & C3 & C4 & C5 --> D[fct_attribution_comparison]
-    C6 --> D
-
-    D --> E[Compare channel credit across models]
-    E --> F{Models agree?}
-    F -->|Yes| G[High confidence in that channel's value]
-    F -->|No| H[Investigate: likely a channel whose role depends heavily on funnel position]
-
-    classDef source fill:#F5F4FA,stroke:#644aab,color:#333
-    classDef model fill:#e0f2f1,stroke:#00796b,color:#333
-    classDef markov fill:#c3fae8,stroke:#0891b2,color:#333
-    classDef output fill:#e8f5e9,stroke:#1e8449,color:#333
-    classDef decision fill:#fff3cd,stroke:#d35400,color:#333
-    class A,B source
-    class C1,C2,C3,C4,C5 model
-    class C6 markov
-    class D,E output
-    class F decision
-    class G,H output
-```
+![Architecture diagram](diagram.svg)
 
 The reason six models exist here rather than picking one is deliberate. Rule based models (first touch, last touch, linear, time decay, position based) are fast and explainable but arbitrary, someone decided the weighting. The Markov chain model is data driven, it measures each channel's actual removal effect, how much conversion probability drops when that channel is taken out of the observed paths, but it's a black box that's harder to explain to a stakeholder in one sentence. Running both side by side is more honest than picking one and presenting it as ground truth.
 
