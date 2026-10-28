@@ -1,6 +1,6 @@
 # Attribution Modeling Toolkit
 
-Multi-touch attribution models built in SQL and Python so a customer journey can be evaluated by more than one lens before a business commits to which channel gets the credit. Built around the kind of attribution work I do at [motabar.builds.stuff](https://motabar.builds.stuff).
+Multi-touch attribution models built in SQL and Python so a customer journey can be evaluated by more than one lens before a business commits to which channel gets the credit. Built around the kind of attribution work I do at [motabar.builds.stuff](https://motabarbuildstuff.com/).
 
 ## The problem this solves
 
@@ -37,3 +37,11 @@ When first touch and last touch disagree sharply on a channel, that's not a bug,
 ## Stack
 
 BigQuery, Python, dbt, SQL
+
+## Related
+
+* Guide: [Why don't Meta, Google Ads and GA4 conversions match?](https://motabarbuildstuff.com/blog/why-meta-google-ads-ga4-conversions-dont-match/)
+* Case study: [Fixing Broken Tracking & Unlocking Lead Growth](https://motabarbuildstuff.com/case-studies/fixing-broken-tracking-unlocking-lead-growth/)
+* Service: [Marketing analytics consulting](https://motabarbuildstuff.com/marketing-analytics-consultant/)
+
+Built by [Motabar Javaid](https://motabarbuildstuff.com/about/), analytics engineer at [motabar.builds.stuff](https://motabarbuildstuff.com/).
